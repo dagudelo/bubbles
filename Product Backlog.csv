@@ -1,0 +1,128 @@
+ID,Description,Theme,Priority,Acceptance Criteria,Business Value,Predecessor ID,Successor ID,Sprint,Estimates,Actuals,Remaining,Status,Notes
+1,Definir la tecnología e infraestructura requerida para la BD espacial de producción,"S1 -> Arquitectura y Diseño de Modelo y Diccionario de datos, catalogo de objetos y metadatos ",Must Have,"1. Permita ampliación/disminución de recursos tecnológicos (memoria, disco duro, procesamiento)
+3. Cumpla con criterios de seguridad
+4. Disponible dentro de la VPN de Enel
+5. Documento con especificaciones técnicas (validación con Andrea)
+
+","Alta disponibilidad de la información, escalabilidad, seguridad,",,"2,3",S1,3,3,0,Completed,
+2,BD espacial dentro de una estructura corporativa (en ambiente de desarrollo),"S1 -> Arquitectura y Diseño de Modelo y Diccionario de datos, catalogo de objetos y metadatos ",Must Have,"1.La información no debe ocupar espacio local
+2. Debe aceptar múltiples conexiones  de forma concurrente
+3.No debe depender del software de visualización
+4. La BD debe permitir el ingreso de información nueva (schemas, tablas, registros)
+5. Open source (postgres)
+3. Cumpla con criterios de seguridad","Información centralizada, estandarizada, validada Permite integración con otros sistemas de la compañía, 
+Información de calidad para toma de decisiones
+",1,,S1,3,3,0,Completed,
+3,Me gustaría tener una definición de roles y responsabilidades de la administración de BD,"S1 -> Arquitectura y Diseño de Modelo y Diccionario de datos, catalogo de objetos y metadatos ",Must Have,"1.Definición de los grupos de usuarios (roles) (permisos y operaciones permitidas (CURD))
+2. Matriz de cruce de roles contra las operaciones
+3. Roles creados en base de datos","Segregación de funciones
+Seguridad
+Trazabilidad de la información
+Esquema de gobierno",1,,S1,3,3,0,Completed,
+4,Revisión basada en estandares de NTC (4 revisiones ) de la información base entregada,"S1 -> Arquitectura y Diseño de Modelo y Diccionario de datos, catalogo de objetos y metadatos ",Must Have,"1. Informe de estado de la información entregada
+2. Propuesta de información objetivo
+3. Plan de entrega de información ","Visión del estado actual de la información de Enel, y un concepto del futuro de la información corporativa",,,S1,5,5,0,Completed,
+5,"Queremos un diseño de un modelo de datos geográfica, estandarizado, que cumpla con las necesidades de información de Enel ","S1 -> Arquitectura y Diseño de Modelo y Diccionario de datos, catalogo de objetos y metadatos ",Must Have,"1.Informe de arquitectura 
+      Modelo de datos (diagrama)
+      Diseño Catalogo de objetos (explicación de cada Objeto) versión 1
+      Diseño Diccionario de datos V1 
+      Diseño de Metadatos
+Queremos tener un espacio para guardar información 
+Básica
+Temporal
+Proyectos 
+Temática","Estructuración de la información, estandarización",4,,S1,5,5,0,Completed,"Se acepta el cambio de la historia de usuario: retirar alcance de la historia de usuario 5, el diseño de metadatos.
+Tabla de contenido, glosario, descripción breve de la norma, nombre (Base de datos espacial de Energy Management), marcadores con los títulos. Entregar en word para tener control de cambios."
+6,La BD debe permitir la carga de información de tipo Raster,"S2 -> Implementación de Modelo y Diccionario de datos, catalogo de objetos y metadatos ",Must Have,"1. Tomando un archivo raster se agrega con comandos de Postgis para subirlo a la BD
+2. Prueba exitosa
+3. Recomendación de tamaño máximo de raster  (en MB)",Información disponible para cualquier geografía,27,,S2,9,,9,Backlog," -depende del ambiente de desarrollo
+- y el tamaño del raster de prueba
+- depende de Historia No. 2"
+7,Implementación de recomendaciones del informe de calidad,"S2 -> Implementación de Modelo y Diccionario de datos, catalogo de objetos y metadatos ",Must Have,"1. Información cargada con estándares establecidos
+2. Información secundaria de interes",Estandarización de la información,4,,S2,8,,8,Removed,"Esta debe reformularse en varias historias de usuario
+-Definición del modelo de Metadatos 
+-Filtrado de información
+-Definición de información a incluir en la base
+-Revisión de calidad de la información
+- plan de integración (carga de la información)"
+8,"Los usuarios podrán realizar operaciones de lectura directamente sobre la base de datos. Las operaciones CUD (create, Update, Delete) se realizarán a través de un servicio ",S3 -> Carga de información  en la  Geo-database,Must Have,"1. Definición de roles
+2. Basado en los servicios de  realizar una prueba de servicios Delete, Create, Update sobre la BD.
+3. Servicios CRUD definidos. 6 CRUD raster/vectorial, agregados e implementados ",,,,S3,0,,0,Backlog,
+9,Quisiéramos tener dentro de la información base el DEM 12.5 de nuestras cuencas y otras de interés,S3 -> Carga de información  en la  Geo-database,Nice To Have,"1.
+2.
+3.",,,,S3,3,,3,Backlog,
+10,"Nos gustaria tener en la BD el procesamiento hidrologico de los DEM de 30 y 90m de toda Colombia
+Equipo de Recursos",S3 -> Carga de información  en la  Geo-database,Por Definir,"1.
+2.
+3.",,,,S3,0,,0,Backlog,
+11,"Pruebas de BD espacial 
+Delimitar cuencas a partir de las capas preprocesadas del DEM 30 y 90m
+Recursos",S3 -> Carga de información  en la  Geo-database,Por Definir,"1.
+2.
+3.",,,,S3,0,,0,Backlog,
+12,"Se require integrar información base de vias(tipo I,II,II,calle y carrera), centros poblados, barrios, veredas, Bogotá, Cali, Barraquilla, Medellin, Cartagena, Bucaramanga, Manizales, Pereira",S3 -> Carga de información  en la  Geo-database,Por Definir,"1.
+2.
+3.","Poder definir y optimizar rutas para visitas de clientes y potenciales clientes,",,,S3,0,,0,Backlog,
+13,"Pruebas de BD espacial 
+Interpolación a partir de datos de tablas de Geo y de datos de la DB
+Tomar los datos de la BD hidrometeorologica,  hacer la interpolación por IDW y guardar  y consultar el resultado en el esquerma temporal",S3 -> Carga de información  en la  Geo-database,Por Definir,"1.
+2.
+3.",,,,S3,0,,0,Backlog,
+14,Pruebas de consulta espaciales y consultas a la BD,S3 -> Carga de información  en la  Geo-database,Por Definir,"1.
+2.
+3.",,,,S3,0,,0,Backlog,
+15,Definir el sistema de coordenadas ,S3 -> Carga de información  en la  Geo-database,Por Definir,"1.
+2.
+3.",,,,S3,0,,0,Backlog,
+16,Levantamiento de información secundaria de clientes del mercado no regulado,S3 -> Carga de información  en la  Geo-database,Por Definir,"1.
+2.
+3.",,,,S3,0,,0,Backlog,
+17,Requerimos  recopilar e integrar información  predial para georreferenciar clientes y clientes potenciales de energía y gas,S4 -> Integración de Fuel and Gas,Por Definir,"1.
+2.
+3.",,,,S4,0,,0,Backlog,
+18,Queremos recopilar e integrar la información de gasoductos de transporte del SNT para seguimiento de capacidades contratadas y disponibles,S4 -> Integración de Fuel and Gas,Por Definir,"1.
+2.
+3.",,,,S4,0,,0,Backlog,
+19,"La BD que almacena hidrometeorología no debe depender del software de hidrología, debe ser independiente",S5 -> Agregar capas complementarias e integración con modelo de hidrología,Must Have,"1.exista la información
+2. se requiere el raster, (
+3.",,,,S5,0,,0,Backlog,"La fuente no es pública, se publica el resultado y publican un dibujo (jpg), requerimos el origen con el cual se generó el dibujo"
+20,Me gustaría tener información referente al identificador de las estaciones,S5 -> Agregar capas complementarias e integración con modelo de hidrología,Por Definir,"1.
+2.
+3.",,,,S5,0,,0,Backlog,
+21,Queremos tener los metadatos de la información geográfica que identifiquemos,S5 -> Agregar capas complementarias e integración con modelo de hidrología,Por Definir,1.quisiera tener un formato mínimo de metadatos ,,,,S5,0,,0,Backlog,
+22,"Quisiéramos tener un manual de usuarios de la BD
+-carga de información
+tipos de usuarios
+características base",S8 -> estabilización y entrenamiento usuarios finales,Por Definir,"1.
+2.
+3.",,,,S8,0,,0,Backlog,
+23,"Capas adicionales a incluir en la BD Geográfica 
+-Clientes mercado No Regulado
+-Cartera
+-Facturación",S5 -> Agregar capas complementarias e integración con modelo de hidrología,Por Definir,"1.
+2.
+3.",,,,S5,0,,0,Backlog,
+24,"La BD que almacena hidrometerología no debe depender del software de hidrología, debe ser independiente",S5 -> Agregar capas complementarias e integración con modelo de hidrología,Must Have,"1.
+2.
+3.",,,,S5,0,,0,Removed,
+25,tener acceso con LDAP a la base de datos,"S1 -> Arquitectura y Diseño de Modelo y Diccionario de datos, catalogo de objetos y metadatos ",Nice To Have,1. Tener acceso con usuario de directorio activo enel,,,,S1,0,,0,Removed,"No está dentro de las politicas de seguridad de enel, la historia debe retirarse del backlog"
+26,"Recopilar funciones y requerimientos de las areas( quienes son, que necesitan, frecuencia, gerencia) y mapear con roles definidos",S7 -> Despliegue de solución,Should Have,,,,,S7,0,,0,Backlog,
+27,Requerimos instalar la extensión de Postgis con todas sus dependencias dentro del servidor de base de datos entregado (en desarrollo),"S2 -> Implementación de Modelo y Diccionario de datos, catalogo de objetos y metadatos ",Must Have,"1. Extensión instalada
+2. Pruebas de carga de shapes
+3. Pruebas de consulta","Garantizar el funcionamiento de la base de datos espacial
+Confiabilidad y calidad de la información
+Digitalización de la información",2,6,S2,15,,15,Active,
+28,"Requerimos un modelo de Metadatos que permita conocer el origen, características y custodia de la información","S2 -> Implementación de Modelo y Diccionario de datos, catalogo de objetos y metadatos ",Must Have,"1. Estandarizado
+2. Trazable mediante el estándar definido
+3. Template estándar definido","Garantizar el funcionamiento de la base de datos espacial
+Confiabilidad y calidad de la información
+Digitalización de la información",5,30,,11,,11,Active,
+29,Requerimos una definición de la información adicional incluyendo proyectos y temporal.,"S2 -> Implementación de Modelo y Diccionario de datos, catalogo de objetos y metadatos ",Must Have,"1. Definir información a incluir dentro de cada esquema, entregable excel (modelo de datos, esquemas proyecto y temporal)
+2. Cubrir la totalidad de la información suministrada","Estructuración de la información, estandarización, ",5,30,,15,,15,Backlog,
+30,"Se requiere un plan de integración para definir qué capas, metadatos, van a ser construidos, cargados y entregados. ","S2 -> Implementación de Modelo y Diccionario de datos, catalogo de objetos y metadatos ",Must Have,"1. Plan de construcción y entrega de metadatos (1 sesión de trabajo)
+2. Inicio de la construcción de metadatos
+3. Capas estandarizadas que van a ser cargadas. ",,28,,,15,,15,Backlog,
+31,"Requerimos que las capas de información se encuentren en correcta georreferenciación, con los atributos definidos en el catálogo de objetos, y sin errores de topología","S2 -> Implementación de Modelo y Diccionario de datos, catalogo de objetos y metadatos ",Must Have,"1. Corrección de la información entregada con respecto a los catálogos de objetos
+2. Muestreo del 10% de la información para verificar las correcciones","Garantizar el funcionamiento de la base de datos espacial
+Confiabilidad y calidad de la información
+Digitalización de la información",5,,,19,,19,Backlog,
